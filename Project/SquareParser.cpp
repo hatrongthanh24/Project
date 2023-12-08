@@ -13,4 +13,4 @@ IShape* SquareParser::parse(string token)
 	a = stod(side);
 
 	return new Square(a);
-}
+}//hell0
