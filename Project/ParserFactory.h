@@ -5,6 +5,5 @@
 #include"SquareParser.h"
 class ParserFactory {
 public:
-	IParsable* create(string type);
-	;
+	shared_ptr<IParsable> create(string type);
 };

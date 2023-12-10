@@ -1,6 +1,6 @@
 #include "IParsable.h"
 
-IShape* IParsable::parse(string)
+shared_ptr<IShape> IParsable::parse(string)
 {
     return nullptr;
 }

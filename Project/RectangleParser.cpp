@@ -1,17 +1,17 @@
 #include "RectangleParser.h"
 #include"Rectangle.h"
 #include<sstream>
-IShape* RectangleParser::parse(string token)
+shared_ptr<IShape> RectangleParser::parse(string token)
 {
 	string tmp;
 	double w, h;
 	string width, height;
-	stringstream ss(token);;
+	stringstream ss(token);
 	getline(ss, tmp, '=');
 	getline(ss, width, ',');
 	w = stod(width);
 	getline(ss, tmp, '=');
 	getline(ss, height);
 	h = stod(height);
-	return new Rectangle(w, h);
+	return make_shared< Rectangle>(w, h);
 }

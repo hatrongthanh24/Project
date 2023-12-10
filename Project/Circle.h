@@ -7,7 +7,7 @@ private:
 	double _r;
 
 public:
-	~Circle();
+	//~Circle();
 	Circle(double);
 	string toString();
 public:

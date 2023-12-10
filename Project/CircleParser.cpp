@@ -1,7 +1,7 @@
 #include "CircleParser.h"
 #include<sstream>
 #include"Circle.h"
-IShape* CircleParser::parse(string token)
+shared_ptr<IShape> CircleParser::parse(string token)
 {
 	double r;
 	string radius, tmp;
@@ -9,5 +9,5 @@ IShape* CircleParser::parse(string token)
 	getline(ss, tmp, '=');
 	getline(ss, radius);
 	r = stod(radius);
-	return new Circle(r);
+	return make_shared< Circle>(r);
 }

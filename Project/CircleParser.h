@@ -3,5 +3,5 @@
 #include"IShape.h"
 class CircleParser :public IParsable {
 public:
-	IShape* parse(string);
+	shared_ptr<IShape> parse(string);
 };

@@ -1,17 +1,17 @@
 #include "ParserFactory.h"
 
-IParsable* ParserFactory::create(string type)
+shared_ptr<IParsable> ParserFactory::create(string type)
 {
-    IParsable* parser = NULL;
+    shared_ptr<IParsable> parser = NULL;
 
     if ("Rectangle" == type) {
-        return new RectangleParser();
+        return make_shared<RectangleParser>();
     }
     else if ("Square" == type) {
-        return new SquareParser();
+        return make_shared<SquareParser>();
     }
     else if ("Circle" == type) {
-        return new CircleParser();
+        return make_shared<CircleParser>();
     }
 
     return NULL;
