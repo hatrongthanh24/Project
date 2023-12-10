@@ -2,9 +2,13 @@
 //
 
 #include <iostream>
-
+#include "ShapeLoaderDll.h"
 int main()
 {
+    vector<string>v= Utils::ShapeLoader::loadShape("shape.txt");
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
     std::cout << "Hello World!\n";
 }
 
