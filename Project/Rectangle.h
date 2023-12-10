@@ -8,7 +8,7 @@ private:
 	double _h;
 
 public:
-	~Rectangle();
+	//~Rectangle();
 	Rectangle(double, double);
 	string toString();
 public:

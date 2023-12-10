@@ -7,7 +7,7 @@ private:
 	double _a;
 
 public:
-	~Square();
+	//~Square();
 	Square(double);
 	string toString();
 public:

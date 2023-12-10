@@ -4,6 +4,6 @@
 using namespace std;
 class IParsable {
 public:
-	virtual IShape* parse(string);
+	virtual shared_ptr<IShape> parse(string);
 
 };

@@ -1,10 +1,7 @@
 #include "Rectangle.h"
 #include<sstream>
 #include<iostream>
-Rectangle::~Rectangle()
-{
-	cout << "Rectangle";
-}
+
 Rectangle::Rectangle(double w, double h)
 {
 	_w = w;

@@ -1,6 +1,7 @@
 #pragma once
 #include<string>
 #include<iostream>
+#include<memory>
 using namespace std;
 class IShape {
 private:
