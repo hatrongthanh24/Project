@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <iomanip>
 #include "ParserFactory.h"
 #include "IShape.h"
@@ -49,5 +50,11 @@ int main()
         cout << endl;
     }
   
+=======
+
+int main()
+{
+   
+>>>>>>> 72c6cde81cbb0daf74354e42c7decc8e52014b1e
 }
 

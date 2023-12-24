@@ -146,6 +146,7 @@
     <ClCompile Include="ShapeSorter.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="SquareParser.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
@@ -162,7 +163,11 @@
     <ClInclude Include="ShapeSorter.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="SquareParser.h" />
+<<<<<<< HEAD
     <ClInclude Include="Utils.h" />
+=======
+    <ClInclude Include="Triangle.h" />
+>>>>>>> 72c6cde81cbb0daf74354e42c7decc8e52014b1e
   </ItemGroup>
   <ItemGroup>
     <Text Include="shape.txt" />

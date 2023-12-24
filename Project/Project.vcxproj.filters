@@ -45,10 +45,14 @@
     <ClCompile Include="ShapeSorter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="NormalDisplayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RowDisplayer.cpp">
+=======
+    <ClCompile Include="Triangle.cpp">
+>>>>>>> 72c6cde81cbb0daf74354e42c7decc8e52014b1e
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,6 +90,7 @@
     <ClInclude Include="ShapeSorter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -96,6 +101,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RowDisplayer.h">
+=======
+    <ClInclude Include="Triangle.h">
+>>>>>>> 72c6cde81cbb0daf74354e42c7decc8e52014b1e
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
