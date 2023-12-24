@@ -3,5 +3,6 @@
 #include"IShape.h"
 class RectangleParser :public IParsable {
 public:
-	shared_ptr<IShape> parse(string);
+	tuple<bool, shared_ptr<IShape>>parse(string token);
+	string keyword();
 };

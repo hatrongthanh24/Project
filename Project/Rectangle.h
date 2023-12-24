@@ -1,8 +1,8 @@
 #pragma once
-#include"IShape.h"
-#include<string>
-using namespace std;
-class Rectangle :public IShape {
+#include "IShape.h"
+
+
+class Rectangle :public IShape, public enable_shared_from_this<Rectangle> {
 private:
 	double _w;
 	double _h;
@@ -10,9 +10,10 @@ private:
 public:
 	//~Rectangle();
 	Rectangle(double, double);
-	string toString();
 public:
-	double area();
-	double perimeter();
-
+	void accept(shared_ptr<IDisplayer> visitor);
+	double calculateArea();
+	double calculatePerimeter();
+	double getWidth();
+	double getHeight();
 };

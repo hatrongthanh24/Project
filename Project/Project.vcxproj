@@ -104,18 +104,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Desktop\project\ShapeLoader\ShapeLoader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\ShapeLoader\ShapeLoader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>ShapeLoader.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Desktop\project\ShapeLoader\x64\Debug;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\lib\onecore\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\ShapeLoader\$(IntDir);C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\lib\onecore\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "..\ShapeLoader\$(IntDir)ShapeLoader.dll" "$(OutDir)"
-
-</Command>
+      <Command>xcopy /y /d "..\ShapeLoader\$(IntDir)ShapeLoader.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,13 +136,13 @@
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleParser.cpp" />
-    <ClCompile Include="IParsable.cpp" />
-    <ClCompile Include="IShape.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NormalDisplayer.cpp" />
     <ClCompile Include="NumberFormat.cpp" />
     <ClCompile Include="ParserFactory.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="RectangleParser.cpp" />
+    <ClCompile Include="RowDisplayer.cpp" />
     <ClCompile Include="ShapeSorter.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="SquareParser.cpp" />
@@ -151,15 +150,19 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CircleParser.h" />
+    <ClInclude Include="IDisplayer.h" />
     <ClInclude Include="IParsable.h" />
     <ClInclude Include="IShape.h" />
+    <ClInclude Include="NormalDisplayer.h" />
     <ClInclude Include="NumberFormat.h" />
     <ClInclude Include="ParserFactory.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RectangleParser.h" />
+    <ClInclude Include="RowDisplayer.h" />
     <ClInclude Include="ShapeSorter.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="SquareParser.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="shape.txt" />

@@ -3,23 +3,25 @@
 #include<sstream>
 #include<sstream>
 using namespace std;
+
+void Circle::accept(shared_ptr<IDisplayer> displayer) {
+	displayer->displayCircle(shared_from_this());
+}
+
 Circle::Circle(double r)
 {
 	_r = r;
 }
-string Circle::toString()
-{
-	stringstream ss;
-	ss << "Circle: Radius=" << _r;
-	return ss.str();
-}
 
-double Circle::area()
+double Circle::calculateArea()
 {
 	return 3.14 * _r * _r;
 }
 
-double Circle::perimeter()
+double Circle::calculatePerimeter()
 {
 	return 3.14 * (_r + _r);
+}
+double Circle::getRadius() {
+	return _r;
 }

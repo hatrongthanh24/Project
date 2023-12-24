@@ -3,11 +3,10 @@
 #include<iostream>
 #include<memory>
 using namespace std;
+#include "IDisplayer.h"
 class IShape {
-private:
 public:
-
-	virtual string toString();
-	virtual double area() = 0;
-	virtual double perimeter() = 0;
+	virtual void accept(shared_ptr<IDisplayer> visitor) = 0;
+	virtual double calculateArea()=0;
+	virtual double calculatePerimeter()=0;
 };

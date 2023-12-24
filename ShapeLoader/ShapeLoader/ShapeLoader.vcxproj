@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{28e57659-b3eb-49c4-86d0-963dea68bacd}</ProjectGuid>
+    <ProjectGuid>{96b42dc3-f58c-4c2f-a0c4-891d8a64100b}</ProjectGuid>
     <RootNamespace>ShapeLoader</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -143,7 +143,7 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="ShapeLoaderDll.h" />
+    <ClInclude Include="ShapeLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

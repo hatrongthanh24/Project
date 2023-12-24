@@ -1,17 +1,18 @@
 #pragma once
-#include<string>
 #include"IShape.h"
-using namespace std;
-class Circle :public IShape {
+
+
+
+class Circle :public IShape, public enable_shared_from_this<Circle> {
 private:
 	double _r;
 
 public:
-	//~Circle();
 	Circle(double);
-	string toString();
 public:
-	double area();
-	double perimeter();
+	void accept(shared_ptr<IDisplayer> visitor);
+	double calculateArea();
+	double calculatePerimeter();
+	double getRadius();
 
 };

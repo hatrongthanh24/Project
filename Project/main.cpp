@@ -1,24 +1,53 @@
-// Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include "ShapeLoaderDll.h"
+#include <iomanip>
+#include "ParserFactory.h"
+#include "IShape.h"
+#include <memory>
+#include "NormalDisplayer.h"
+#include "RowDisplayer.h"
+#include "IDisplayer.h"
+#include "Utils.h"
+#include "ShapeLoader.h"
+
 int main()
 {
-    vector<string>v= Utils::ShapeLoader::loadShape("shape.txt");
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i] << " ";
+    vector<int> widths = {
+        15, 11, 28
+    };
+    const string FILENAME = "shape.txt";
+    auto dao = ShapeLoader::instance();
+    auto f = ParserFactory::instance();
+    shared_ptr<IDisplayer> normalDisplayer = std::make_shared<NormalDisplayer>();
+    shared_ptr<IDisplayer> rowDisplayer = std::make_shared<RowDisplayer>(widths);
+    
+    vector <string> rawData=dao->loadShape(FILENAME);
+    vector<std::shared_ptr<IShape>> shapes;
+
+    for (int i = 0; i < rawData.size(); i++) {
+        vector<string> tokens = Utils::String::split(rawData[i], ": ");
+        shared_ptr<IParsable> parser = f->create(tokens[0]);
+        auto parseResult= parser->parse(tokens[1]);
+
+        if (get<0>(parseResult) != false) {
+            shapes.push_back(get<1>(parseResult));
+        }
     }
-    std::cout << "Hello World!\n";
+
+    cout << "Reading shapes.txt..." << endl;
+    cout << "Found " << shapes.size() << "/" << rawData.size() << " shapes." << endl;
+
+    for (int i = 0; i < shapes.size(); i++) {
+        cout << i + 1 << ". ";
+        shapes[i]->accept(normalDisplayer);
+        cout << endl;
+    }
+    cout << endl;
+
+    for (int i = 0; i < shapes.size(); i++) {
+        cout << "|" << i + 1 << "|";
+        shapes[i]->accept(rowDisplayer);
+        cout << endl;
+    }
+  
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

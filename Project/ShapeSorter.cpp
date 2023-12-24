@@ -1,12 +1,12 @@
 #include "ShapeSorter.h"
 
-void ShapeSorter::SortByPerimeter(vector<IShape*>&a)
+void ShapeSorter::sortByPerimeter(vector<IShape*>&a)
 {
     for (int i = 0; i < a.size() - 1; ++i)
     {
         for (int j = i + 1; j < a.size(); ++j)
         {
-            if (a[i]->perimeter() > a[j]->perimeter())
+            if (a[i]->calculatePerimeter() > a[j]->calculatePerimeter())
             {
                 swap(a[i], a[j]);
             }
@@ -14,16 +14,18 @@ void ShapeSorter::SortByPerimeter(vector<IShape*>&a)
     }
 }
 
-void ShapeSorter::SortByArea(vector<IShape*>&a)
+void ShapeSorter::sortByArea(vector<IShape*>&a)
 {
     for (int i = 0; i < a.size() - 1; ++i)
     {
         for (int j = i + 1; j < a.size(); ++j)
         {
-            if (a[i]->area() > a[j]->area())
+            if (a[i]->calculateArea() > a[j]->calculateArea())
             {
                 swap(a[i], a[j]);
             }
         }
     }
 }
+
+

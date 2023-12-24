@@ -3,6 +3,7 @@
 #include"IShape.h"
 class ShapeSorter {
 public:
-	void SortByPerimeter(vector<IShape*>&);
-	void SortByArea(vector<IShape*>&);
+	
+	void sortByPerimeter(vector<IShape*>&);
+	void sortByArea(vector<IShape*>&);
 };

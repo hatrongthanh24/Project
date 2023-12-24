@@ -3,5 +3,6 @@
 #include"IShape.h"
 class SquareParser :public IParsable {
 public:
-	shared_ptr<IShape> parse(string);
+	tuple<bool, shared_ptr<IShape>> parse(string);
+	string keyword();
 };
